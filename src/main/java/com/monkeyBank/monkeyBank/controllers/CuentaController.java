@@ -42,6 +42,8 @@ public class CuentaController {
       return saldo ;
     }
 
+
+
     @RequestMapping(value = "api/retirarSaldo", method = RequestMethod.POST)
     public long retirarSaldo(@RequestBody Cuenta cuenta,  long valorRetirar){
         long saldo = cuentaDao.Retirar(cuenta,valorRetirar);
@@ -54,6 +56,13 @@ public class CuentaController {
         return saldo;
     }
 
+
+    @RequestMapping(value = "api/consultarCuentaPorId", method = RequestMethod.POST)
+    public Integer consultarCuenta(@RequestBody Cuenta cuenta){
+        List<Cuenta> cuentas = cuentaDao.getCuentaporId(cuenta);
+        Integer idCuenta = cuentas.get(0).getId_cuenta();
+        return idCuenta ;
+    }
 
 
 

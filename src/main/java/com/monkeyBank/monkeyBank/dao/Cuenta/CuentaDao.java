@@ -23,4 +23,6 @@ public interface CuentaDao {
     Long Retirar(Cuenta cuenta, long valorRetirar);
 
     Long Consignar(Cuenta cuenta, long valorConsigar);
+
+    List<Cuenta> getCuentaporId(Cuenta cuenta);
 }

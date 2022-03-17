@@ -94,5 +94,15 @@ public class CuentaDaoImpl implements CuentaDao{
         return SaldoNuevo;
     }
 
+    @Override
+    public List<Cuenta> getCuentaporId(Cuenta cuenta) {
+        String query = "From Cuenta WHERE id_usuario_cuenta = :id_usuario_cuenta";
+        List<Cuenta> count = entityManager.createQuery(query)
+                .setParameter("id_usuario_cuenta", cuenta.getId_usuario_cuenta())
+                .getResultList();
+
+        return  count;
+    }
+
 
 }

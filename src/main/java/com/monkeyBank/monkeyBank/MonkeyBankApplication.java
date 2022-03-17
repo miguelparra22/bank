@@ -1,5 +1,6 @@
 package com.monkeyBank.monkeyBank;
 
+import com.monkeyBank.monkeyBank.controllers.JWTAuthorizationFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
