@@ -58,6 +58,7 @@ public class CuentaDaoImpl implements CuentaDao{
         List<Cuenta> cuentas = entityManager.createQuery(query).setParameter("id_cuenta", cuenta.getId_cuenta())
                 .getResultList();
 
+
         Timestamp fecha = cuentas.get(0).getFecha_creacion();
         Integer usuario = cuentas.get(0).getId_usuario_cuenta();
         Long SaldoActual = cuentas.get(0).getSaldo();

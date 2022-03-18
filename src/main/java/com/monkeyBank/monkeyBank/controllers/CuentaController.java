@@ -46,14 +46,21 @@ public class CuentaController {
 
     @RequestMapping(value = "api/retirarSaldo", method = RequestMethod.POST)
     public long retirarSaldo(@RequestBody Cuenta cuenta,  long valorRetirar){
-        long saldo = cuentaDao.Retirar(cuenta,valorRetirar);
-        return saldo;
+        if(valorRetirar >= 0){
+            long saldo = cuentaDao.Retirar(cuenta,valorRetirar);
+            return saldo;
+        }
+
+        return 0;
     }
 
     @RequestMapping(value = "api/consignarSaldo", method = RequestMethod.POST)
     public long consignarSaldo(@RequestBody Cuenta cuenta,  long valorConsignar){
-        long saldo = cuentaDao.Consignar(cuenta, valorConsignar);
-        return saldo;
+        if(valorConsignar >= 0){
+            long saldo = cuentaDao.Consignar(cuenta, valorConsignar);
+            return saldo;
+        }
+         return  0;
     }
 
 
